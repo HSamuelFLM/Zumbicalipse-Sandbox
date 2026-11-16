@@ -2,16 +2,16 @@
 
 Jogo 3D de sobrevivência single-player, com mundo grande e procedural, exploração, coleta de recursos, fabricação, construção livre e engenharia funcional.
 
-**Plataforma inicial:** PC Linux x86_64  
-**Stack inicial:** Godot 4.7.2 + Rust (godot-rust 0.5.5 / GDExtension API 4.7)  
+**Plataformas-alvo:** Windows 10/11 x86_64 e Linux x86_64  
+**Stack:** Godot 4.7.2 Standard + Rust (godot-rust 0.5.5 / GDExtension API 4.7)  
 **Visual:** 3D low-poly detalhado  
 **Perspectiva:** alternância entre primeira e terceira pessoa
 
 ## Estado do projeto
 
-A direção e a especificação técnica estão documentadas. A fundação inicial Godot 3D + Rust está sendo preparada; os sistemas completos de sobrevivência, mundo procedural, escavação, construção e engenharia ainda não foram implementados.
+A especificação e o roadmap estão registrados. A fundação Godot 3D + Rust está no repositório, com cena inicial, personagem placeholder, movimentação, alternância de câmera e ponte nativa Rust. Os sistemas completos de sobrevivência, mundo procedural, escavação, inventário, construção e engenharia ainda serão implementados.
 
-O repositório preserva um protótipo experimental 2D em HTML/CSS/JavaScript, criado antes da decisão de migrar para 3D. Esse protótipo é legado e não é a arquitetura do jogo final.
+O protótipo experimental 2D em HTML/CSS/JavaScript foi removido. A partir desta versão, o repositório contém somente a linha de desenvolvimento 3D.
 
 ## Documentação
 
@@ -19,18 +19,36 @@ O repositório preserva um protótipo experimental 2D em HTML/CSS/JavaScript, cr
 - [Roadmap de desenvolvimento](docs/ROADMAP.md)
 - [Ambiente e comandos de desenvolvimento](docs/DEVELOPMENT.md)
 
-## Fundação 3D
+## Estrutura
 
-A raiz do repositório contém o projeto Godot. A extensão Rust fica em `rust/`.
+- `project.godot`: projeto Godot.
+- `scenes/`: cenas 3D.
+- `scripts/`: lógica de apresentação e controles em GDScript.
+- `rust/crates/game_core/`: núcleo nativo em Rust.
+- `zumbicalipse.gdextension`: caminhos das bibliotecas nativas Windows/Linux.
+- `.github/workflows/ci.yml`: validação contínua Rust nas duas plataformas.
+
+## Compilar
+
+Instale Godot 4.7.2 Standard, Rust stable (mínimo 1.94) e as ferramentas de compilação da plataforma.
+
+Windows (PowerShell):
+
+```powershell
+cargo build --manifest-path rust/Cargo.toml
+godot --editor --path .
+```
+
+Linux:
 
 ```bash
 cargo build --manifest-path rust/Cargo.toml
 godot --editor --path .
 ```
 
-Consulte [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) para dependências, execução e solução de problemas.
+Para instruções completas, consulte [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
-## Controles do protótipo
+## Controles atuais
 
 - WASD: movimentar.
 - Mouse: olhar ao redor.
@@ -41,4 +59,4 @@ Consulte [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) para dependências, execuç�
 
 ## Próximo marco
 
-Validar a compilação e o carregamento da extensão Rust em Godot 4.7.x no Linux antes de iniciar a implementação dos sistemas de jogo.
+Validar a abertura do projeto e o carregamento da extensão Rust em Godot 4.7.2 no Windows e no Linux. A CI já verifica compilação, formatação e testes Rust nos dois sistemas.
