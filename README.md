@@ -9,7 +9,7 @@ Jogo 3D de sobrevivência single-player, com mundo grande e procedural, explora�
 
 ## Estado do projeto
 
-A especificação e o roadmap estão registrados. A fundação Godot 3D + Rust está no repositório, com cena inicial, personagem placeholder, movimentação, alternância de câmera e ponte nativa Rust. Os sistemas completos de sobrevivência, mundo procedural, escavação, inventário, construção e engenharia ainda serão implementados.
+A especificação e o roadmap estão registrados. A fundação Godot 3D + Rust está no repositório, com cena inicial, personagem placeholder, movimentação com aceleração, alternância de câmera, interação por mira e coleta de madeira/pedra em uma área de teste. A ponte nativa Rust está estruturada, aguardando validação em runtime. Os sistemas completos de sobrevivência, mundo procedural, escavação, inventário, construção e engenharia ainda serão implementados.
 
 O protótipo experimental 2D em HTML/CSS/JavaScript foi removido. A partir desta versão, o repositório contém somente a linha de desenvolvimento 3D.
 
@@ -55,6 +55,7 @@ Para instruções completas, consulte [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)
 - Espaço: pular.
 - Shift: sprint.
 - V: alternar primeira/terceira pessoa.
+- E: coletar madeira e pedra quando estiver mirando em um recurso próximo.
 - Escape: liberar o mouse; clique na janela para capturá-lo novamente.
 
 ## Próximo marco
