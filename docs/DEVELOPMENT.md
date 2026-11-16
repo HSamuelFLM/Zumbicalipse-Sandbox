@@ -72,7 +72,7 @@ godot --path .
 
 No Windows, execute os mesmos comandos no PowerShell ou no terminal configurado para localizar o executável Godot.
 
-O protótipo 3D atual inclui chão e iluminação, personagem placeholder, movimentação WASD, pulo, sprint, mouse look e alternância de perspectiva com V. Escape libera o mouse; clique na janela para capturá-lo novamente.
+O protótipo 3D atual inclui chão e iluminação, personagem placeholder, movimentação WASD com aceleração, pulo, sprint, mouse look, alternância de perspectiva com V e coleta de madeira/pedra mirando no recurso e pressionando E. Escape libera o mouse; clique na janela para capturá-lo novamente.
 
 A HUD informa se a extensão Rust foi carregada. Sem a biblioteca compilada, a cena continua abrindo e mostra uma mensagem de orientação.
 
