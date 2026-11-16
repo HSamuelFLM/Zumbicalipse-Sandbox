@@ -3,14 +3,14 @@
 ## Versões fixadas
 
 - Godot Engine **4.7.2 stable**, edição Standard (não .NET).
-- Rust **stable**, edição 2024.
+- Rust **stable**, com versão mínima declarada de **1.94**.
 - godot-rust **0.5.5**, API GDExtension **4.7**.
 
-A extensão é compilada contra a API 4.7. Use Godot 4.7.x para executar este checkout. Não use Godot 4.8 beta/dev neste estágio.
+A extensão é compilada contra a API 4.7. Use Godot 4.7.x para executar este checkout. Não use Godot 4.8 beta/dev neste estágio. O godot-rust 0.5.5 requer uma toolchain Rust recente; a versão mínima do workspace está declarada em `rust/Cargo.toml`.
 
 ## Dependências
 
-Instale Godot 4.7.2 Standard para Linux x86_64, Rust via rustup e as ferramentas de compilação C/C++ e linker da sua distribuição.
+Instale Godot 4.7.2 Standard para Linux x86_64, Rust via rustup (stable 1.94 ou superior) e as ferramentas de compilação C/C++ e linker da sua distribuição.
 
 Verifique:
 
