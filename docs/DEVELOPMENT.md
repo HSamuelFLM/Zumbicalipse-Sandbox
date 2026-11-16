@@ -1,4 +1,11 @@
-# Ambiente de desenvolvimento — Linux
+# Ambiente de desenvolvimento — Windows e Linux
+
+## Plataformas suportadas
+
+- Windows 10/11 x86_64.
+- Linux x86_64 (distribuições com toolchain C/C++ e linker compatíveis).
+
+A configuração da GDExtension inclui bibliotecas para Windows e Linux. Cada plataforma deve compilar sua própria biblioteca nativa; não reutilize o binário de um sistema operacional no outro.
 
 ## Versões fixadas
 
@@ -6,11 +13,25 @@
 - Rust **stable**, com versão mínima declarada de **1.94**.
 - godot-rust **0.5.5**, API GDExtension **4.7**.
 
-A extensão é compilada contra a API 4.7. Use Godot 4.7.x para executar este checkout. Não use Godot 4.8 beta/dev neste estágio. O godot-rust 0.5.5 requer uma toolchain Rust recente; a versão mínima do workspace está declarada em `rust/Cargo.toml`.
+Use Godot 4.7.x para executar este checkout e mantenha a API `api-4-7` alinhada com a versão da engine.
 
 ## Dependências
 
-Instale Godot 4.7.2 Standard para Linux x86_64, Rust via rustup (stable 1.94 ou superior) e as ferramentas de compilação C/C++ e linker da sua distribuição.
+### Windows
+
+Instale Godot 4.7.2 Standard, Rust via rustup e Visual Studio Build Tools com a carga de trabalho de ferramentas C++ (MSVC e Windows SDK).
+
+Verifique no PowerShell:
+
+```powershell
+godot --version
+rustc --version
+cargo --version
+```
+
+### Linux
+
+Instale Godot 4.7.2 Standard, Rust via rustup e as ferramentas de compilação C/C++ e linker da distribuição.
 
 Verifique:
 
@@ -24,21 +45,23 @@ Em algumas distribuições o executável pode chamar-se `godot4`.
 
 ## Compilar a extensão Rust
 
-Na raiz do repositório:
+Execute na raiz do repositório em qualquer uma das plataformas:
 
 ```bash
 cargo build --manifest-path rust/Cargo.toml
-```
-
-Build otimizada:
-
-```bash
 cargo build --release --manifest-path rust/Cargo.toml
 ```
 
+PowerShell aceita os mesmos comandos.
+
 Bibliotecas geradas:
-- Debug: `rust/target/debug/libzumbicalipse_core.so`
-- Release: `rust/target/release/libzumbicalipse_core.so`
+
+- Windows debug: `rust/target/debug/zumbicalipse_core.dll`
+- Windows release: `rust/target/release/zumbicalipse_core.dll`
+- Linux debug: `rust/target/debug/libzumbicalipse_core.so`
+- Linux release: `rust/target/release/libzumbicalipse_core.so`
+
+A extensão seleciona automaticamente o caminho correspondente ao sistema e à configuração de build por meio de `zumbicalipse.gdextension`.
 
 ## Abrir e executar
 
@@ -47,7 +70,9 @@ godot --editor --path .
 godot --path .
 ```
 
-O protótipo inicial inclui chão e iluminação 3D, personagem placeholder, movimentação WASD, pulo, sprint, mouse look e alternância de perspectiva com V. Escape libera o mouse; clique na janela para capturá-lo novamente.
+No Windows, execute os mesmos comandos no PowerShell ou no terminal configurado para localizar o executável Godot.
+
+O protótipo 3D atual inclui chão e iluminação, personagem placeholder, movimentação WASD, pulo, sprint, mouse look e alternância de perspectiva com V. Escape libera o mouse; clique na janela para capturá-lo novamente.
 
 A HUD informa se a extensão Rust foi carregada. Sem a biblioteca compilada, a cena continua abrindo e mostra uma mensagem de orientação.
 
@@ -59,11 +84,18 @@ cargo check --manifest-path rust/Cargo.toml --workspace
 cargo test --manifest-path rust/Cargo.toml --workspace
 ```
 
+Esses comandos também funcionam no PowerShell.
+
+## Integração contínua
+
+O workflow `.github/workflows/ci.yml` executa formatação, verificação e testes Rust em runners Windows e Linux. Isso valida a compilação do núcleo nativo nas duas plataformas; a abertura da cena e o carregamento real da GDExtension ainda precisam ser confirmados localmente com Godot em cada sistema.
+
 ## Problemas comuns
 
-- **Rust não carregado:** compile a extensão e confirme que o arquivo `.so` existe no caminho indicado em `zumbicalipse.gdextension`.
-- **Extensão não encontrada:** use Godot 4.7.x x86_64 e biblioteca Linux x86_64.
-- **Erro de linker:** instale o linker e as ferramentas de compilação da distribuição.
+- **Rust não carregado:** compile a extensão e confirme se a biblioteca da plataforma existe no caminho indicado em `zumbicalipse.gdextension`.
+- **Extensão não encontrada:** confirme arquitetura x86_64, versão Godot 4.7.x e biblioteca do sistema operacional correto.
+- **Erro de linker no Windows:** instale Visual Studio Build Tools, MSVC e Windows SDK.
+- **Erro de linker no Linux:** instale o linker e as ferramentas de compilação da distribuição.
 - **Mudança de versão:** mantenha `api-4-7` e Godot 4.7.x juntos até validar uma atualização.
 
 ## Limites desta fundação
