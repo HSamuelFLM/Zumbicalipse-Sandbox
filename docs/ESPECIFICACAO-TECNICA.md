@@ -2,7 +2,7 @@
 
 **Versão:** 1.0  
 **Status:** direção de projeto aprovada; implementação 3D ainda não iniciada  
-**Plataforma inicial:** PC Linux x86_64  
+**Plataformas-alvo:** Windows 10/11 x86_64 e Linux x86_64  
 **Idioma deste documento:** português
 
 > Este documento registra as decisões de produto e as diretrizes técnicas aprovadas. Ele não afirma que os sistemas descritos já estejam implementados.
@@ -20,7 +20,7 @@ O diferencial do jogo será a liberdade para criar projetos próprios usando com
 | Tema | Decisão |
 |---|---|
 | Modo | Single-player |
-| Plataforma inicial | PC Linux, x86_64 |
+| Plataformas-alvo | Windows 10/11 e Linux, x86_64 |
 | Perspectiva | Alternância entre primeira e terceira pessoa |
 | Visual | 3D low-poly detalhado |
 | Mundo | Grande e procedural, organizado em chunks |
