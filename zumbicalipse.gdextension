@@ -4,5 +4,7 @@ compatibility_minimum = "4.7"
 reloadable = true
 
 [libraries]
+windows.debug.x86_64 = "res://rust/target/debug/zumbicalipse_core.dll"
+windows.release.x86_64 = "res://rust/target/release/zumbicalipse_core.dll"
 linux.debug.x86_64 = "res://rust/target/debug/libzumbicalipse_core.so"
 linux.release.x86_64 = "res://rust/target/release/libzumbicalipse_core.so"
