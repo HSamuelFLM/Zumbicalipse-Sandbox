@@ -22,7 +22,7 @@ func _add_resource_node(resource_id: StringName, world_position: Vector3) -> voi
     var resource_script := preload("res://scripts/resource_node.gd")
     var resource_node := StaticBody3D.new()
     resource_node.set_script(resource_script)
-    resource_node.resource_id = resource_id
+    resource_node.set("resource_id", resource_id)
     resource_node.position = world_position
     $World.add_child(resource_node)
 
