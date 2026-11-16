@@ -19,27 +19,27 @@ O protótipo experimental 2D foi removido. O repositório agora mantém apenas a
 ## Marco 0 — Validação tecnológica
 
 - [ ] Verificar ambientes de desenvolvimento Windows 10/11 e Linux x86_64.
-- [ ] Escolher e fixar versões compatíveis de Godot 4, Rust e godot-rust.
-- [ ] Criar projeto Godot 3D mínimo.
-- [ ] Criar biblioteca Rust com GDExtension.
+- [x] Escolher e fixar versões compatíveis de Godot 4, Rust e godot-rust.
+- [x] Criar projeto Godot 3D mínimo.
+- [x] Criar biblioteca Rust com GDExtension.
 - [ ] Chamar uma função Rust a partir do Godot.
-- [ ] Automatizar ou documentar compilação e execução.
+- [x] Automatizar verificações Rust e documentar compilação e execução.
 - [ ] Validar build de desenvolvimento no Windows e no Linux.
 
 **Critério de conclusão:** projeto mínimo abre, compila e executa no Windows e no Linux, e a integração Rust/Godot funciona de forma reproduzível.
 
 ## Marco 1 — Protótipo 3D jogável
 
-- [ ] Cena de teste 3D e iluminação.
-- [ ] Personagem controlável.
-- [ ] Movimentação, corrida e sprint.
-- [ ] Câmera em primeira pessoa.
-- [ ] Câmera em terceira pessoa.
-- [ ] Alternância de perspectiva sem recriar o personagem.
-- [ ] Interação básica com objetos.
+- [x] Cena de teste 3D e iluminação.
+- [x] Personagem controlável.
+- [x] Movimentação, corrida e sprint com aceleração e controle aéreo.
+- [x] Câmera em primeira pessoa.
+- [x] Câmera em terceira pessoa.
+- [x] Alternância de perspectiva sem recriar o personagem.
+- [x] Interação por mira com coleta de madeira e pedra.
 - [ ] Builds Windows e Linux.
 
-**Critério de conclusão:** jogador consegue explorar uma área de teste nas duas perspectivas.
+**Estado parcial:** cena explorável, personagem, duas perspectivas e coleta de recursos de teste estão implementados no código. O marco só será considerado concluído após validar execução e builds Windows/Linux.
 
 ## Marco 2 — Mundo e terreno
 
