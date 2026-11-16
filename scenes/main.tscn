@@ -52,6 +52,13 @@ text = "WASD mover  |  Espaço pular  |  Shift sprint  |  V trocar câmera  |  E
 [node name="Status" type="Label" parent="HUD"]
 offset_left = 18.0
 offset_top = 48.0
-offset_right = 720.0
-offset_bottom = 82.0
+offset_right = 900.0
+offset_bottom = 78.0
 text = "Inicializando..."
+
+[node name="Resources" type="Label" parent="HUD"]
+offset_left = 18.0
+offset_top = 78.0
+offset_right = 620.0
+offset_bottom = 108.0
+text = "Recursos  |  Madeira: 0  |  Pedra: 0"
