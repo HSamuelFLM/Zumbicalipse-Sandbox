@@ -11,7 +11,8 @@ Este roadmap acompanha a especificação em [ESPECIFICACAO-TECNICA.md](ESPECIFIC
 - [x] Construção livre e morte configurável definidas.
 - [x] Sistemas de terreno, recursos, fixação, mecânica e eletricidade especificados.
 - [x] Especificação técnica registrada.
-- [ ] Fundação 3D Godot + Rust implementada e validada.
+- [x] Estrutura inicial Godot 3D + Rust criada e configurada para Windows/Linux.
+- [ ] Compilação e carregamento da GDExtension validados em Windows e Linux.
 
 O protótipo experimental 2D foi removido. O repositório agora mantém apenas a linha de desenvolvimento 3D.
 
@@ -36,7 +37,7 @@ O protótipo experimental 2D foi removido. O repositório agora mantém apenas a
 - [ ] Câmera em terceira pessoa.
 - [ ] Alternância de perspectiva sem recriar o personagem.
 - [ ] Interação básica com objetos.
-- [ ] Primeira build Linux.
+- [ ] Builds Windows e Linux.
 
 **Critério de conclusão:** jogador consegue explorar uma área de teste nas duas perspectivas.
 
@@ -118,7 +119,7 @@ O protótipo experimental 2D foi removido. O repositório agora mantém apenas a
 - [ ] Testes de integridade dos salvamentos.
 - [ ] Otimização de CPU, memória e carregamento.
 - [ ] Expansão de biomas, itens, estruturas e mecanismos.
-- [ ] Build Linux de distribuição.
+- [ ] Builds de distribuição Windows e Linux.
 - [ ] Documentação de instalação e execução.
 
 ## Princípios de execução
@@ -128,4 +129,4 @@ O protótipo experimental 2D foi removido. O repositório agora mantém apenas a
 3. Não introduzir multiplayer ou bots na primeira versão.
 4. Não implementar simulações duplicadas para os mesmos corpos físicos.
 5. Priorizar sistemas funcionais e combináveis.
-6. Preservar o protótipo 2D legado até que sua substituição esteja validada.
+6. Manter a linha de desenvolvimento exclusivamente 3D; o protótipo 2D legado foi removido.
