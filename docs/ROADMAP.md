@@ -5,7 +5,7 @@ Este roadmap acompanha a especificação em [ESPECIFICACAO-TECNICA.md](ESPECIFIC
 ## Estado atual
 
 - [x] Direção do produto 3D definida.
-- [x] Single-player e Linux como plataforma inicial.
+- [x] Single-player e suporte-alvo Windows/Linux definidos.
 - [x] Mundo grande e procedural definido.
 - [x] Alternância entre primeira e terceira pessoa definida.
 - [x] Construção livre e morte configurável definidas.
@@ -13,19 +13,19 @@ Este roadmap acompanha a especificação em [ESPECIFICACAO-TECNICA.md](ESPECIFIC
 - [x] Especificação técnica registrada.
 - [ ] Fundação 3D Godot + Rust implementada e validada.
 
-O repositório ainda contém um protótipo inicial 2D em HTML/CSS/JavaScript. Esse protótipo é legado e não representa a arquitetura aprovada para o jogo final. Deve ser preservado até que a migração 3D esteja documentada e validada.
+O protótipo experimental 2D foi removido. O repositório agora mantém apenas a linha de desenvolvimento 3D.
 
 ## Marco 0 — Validação tecnológica
 
-- [ ] Verificar ambiente de desenvolvimento Linux x86_64.
+- [ ] Verificar ambientes de desenvolvimento Windows 10/11 e Linux x86_64.
 - [ ] Escolher e fixar versões compatíveis de Godot 4, Rust e godot-rust.
 - [ ] Criar projeto Godot 3D mínimo.
 - [ ] Criar biblioteca Rust com GDExtension.
 - [ ] Chamar uma função Rust a partir do Godot.
 - [ ] Automatizar ou documentar compilação e execução.
-- [ ] Validar build de desenvolvimento no Linux.
+- [ ] Validar build de desenvolvimento no Windows e no Linux.
 
-**Critério de conclusão:** projeto mínimo abre, compila e executa no Linux, e a integração Rust/Godot funciona de forma reproduzível.
+**Critério de conclusão:** projeto mínimo abre, compila e executa no Windows e no Linux, e a integração Rust/Godot funciona de forma reproduzível.
 
 ## Marco 1 — Protótipo 3D jogável
 
