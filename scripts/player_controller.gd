@@ -9,7 +9,7 @@ signal resource_collected(resource_id: StringName, amount: int)
 @export var ground_acceleration: float = 24.0
 @export var ground_friction: float = 28.0
 @export var air_acceleration: float = 8.0
-@export var interaction_distance: float = 3.5
+@export var interaction_distance: float = 4.5
 
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var first_person_camera: Camera3D = $CameraPivot/FirstPersonCamera
