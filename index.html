@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151a18">
+  <title>Zumbicalipse Sandbox</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">Z</span><div><strong>ZUMBICALIPSE</strong><small>SANDBOX DE SOBREVIVÊNCIA</small></div></div>
+      <div class="top-status"><span class="status-dot"></span> PROTÓTIPO 0.1 <span class="divider">/</span> MODO CRIATIVO</div>
+      <button id="resetButton" class="subtle-button" type="button">↺ Reiniciar mundo</button>
+    </header>
+
+    <section class="workspace">
+      <aside class="tool-panel">
+        <div class="panel-heading"><span>OFICINA</span><span class="key-hint">01</span></div>
+        <p class="panel-caption">Monte sua defesa. Teste suas invenções.</p>
+        <div class="tool-group">
+          <span class="group-label">ESTRUTURAS</span>
+          <button class="part-button" data-part="block"><span class="part-icon block-icon"></span><span><b>Bloco de madeira</b><small>Estrutura básica</small></span><kbd>1</kbd></button>
+          <button class="part-button" data-part="wheel"><span class="part-icon wheel-icon"></span><span><b>Roda</b><small>Movimento e tração</small></span><kbd>2</kbd></button>
+          <button class="part-button" data-part="gear"><span class="part-icon gear-icon">⚙</span><span><b>Engrenagem</b><small>Transmissão mecânica</small></span><kbd>3</kbd></button>
+          <button class="part-button" data-part="motor"><span class="part-icon motor-icon">ϟ</span><span><b>Motor</b><small>Fonte de movimento</small></span><kbd>4</kbd></button>
+          <button class="part-button" data-part="rope"><span class="part-icon rope-icon"></span><span><b>Corda</b><small>Conexão flexível (visual)</small></span><kbd>5</kbd></button>
+        </div>
+        <div class="tool-group actions">
+          <span class="group-label">CONTROLE</span>
+          <button id="motorButton" class="motor-toggle" type="button"><span>ϟ</span><span><b>Motor principal</b><small id="motorState">Desligado</small></span><i></i></button>
+          <button id="deleteButton" class="delete-button" type="button">⌫ Remover peça selecionada</button>
+        </div>
+        <div class="panel-foot"><span class="live-indicator"></span> SIMULAÇÃO ATIVA <span id="partCount">0 PEÇAS</span></div>
+      </aside>
+
+      <section class="scene">
+        <div class="scene-toolbar"><div><span class="scene-title">ZONA DE TESTES</span><span class="scene-subtitle">SETOR ABANDONADO · 07:42 AM</span></div><div class="zoom-label">100% <span>⌕</span></div></div>
+        <div class="canvas-wrap"><canvas id="gameCanvas" aria-label="Mundo sandbox interativo"></canvas>
+          <div class="canvas-hint" id="canvasHint">CLIQUE PARA SELECIONAR · ARRASTE PARA MOVER · R PARA GIRAR</div>
+        </div>
+        <div class="scene-footer"><span>● FÍSICA EXPERIMENTAL</span><span id="selectionLabel">NENHUMA PEÇA SELECIONADA</span><span>BUILD 0001</span></div>
+      </section>
+
+      <aside class="info-panel">
+        <div class="panel-heading"><span>INSPEÇÃO</span><span class="key-hint">02</span></div>
+        <div id="emptyInspector" class="empty-inspector"><div class="inspect-cross">＋</div><b>Nenhuma peça selecionada</b><p>Selecione um objeto no cenário para ver seus detalhes.</p></div>
+        <div id="partInspector" class="part-inspector" hidden>
+          <div class="inspect-preview" id="inspectPreview">▰</div>
+          <span class="group-label">COMPONENTE</span>
+          <h3 id="inspectName">Bloco de madeira</h3>
+          <p id="inspectDescription">Peça estrutural.</p>
+          <div class="stat-row"><span>POSIÇÃO X</span><b id="inspectX">0</b></div>
+          <div class="stat-row"><span>POSIÇÃO Y</span><b id="inspectY">0</b></div>
+          <div class="stat-row"><span>ROTAÇÃO</span><b id="inspectRotation">0°</b></div>
+          <div class="inspector-note">DICA: pressione <kbd>R</kbd> para girar o componente selecionado.</div>
+        </div>
+        <div class="survival-card"><span class="group-label">SITUAÇÃO</span><div class="survival-line"><span>Integridade do abrigo</span><b>100%</b></div><div class="meter"><i></i></div><div class="survival-line"><span>Ameaças detectadas</span><b class="safe">0</b></div><div class="survival-line"><span>Energia disponível</span><b>∞</b></div></div>
+      </aside>
+    </section>
+    <footer class="bottom-note"><span>UM MUNDO QUEBRADO. POSSIBILIDADES ILIMITADAS.</span><span>PROJETO EM DESENVOLVIMENTO</span></footer>
+  </main>
+  <script src="src/main.js"></script>
+</body>
+</html>
