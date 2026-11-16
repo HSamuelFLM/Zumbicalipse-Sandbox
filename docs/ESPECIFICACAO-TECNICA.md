@@ -1,7 +1,7 @@
 # Zumbicalipse Sandbox — Especificação Técnica
 
 **Versão:** 1.0  
-**Status:** direção de projeto aprovada; implementação 3D ainda não iniciada  
+**Status:** direção aprovada; fundação inicial Godot 3D + Rust criada; validação multiplataforma pendente  
 **Plataformas-alvo:** Windows 10/11 x86_64 e Linux x86_64  
 **Idioma deste documento:** português
 
@@ -46,7 +46,7 @@ O diferencial do jogo será a liberdade para criar projetos próprios usando com
 - **Blockbench e Blender:** ferramentas para criação e edição de modelos e animações.
 - **Texturas externas:** materiais organizados em arquivos e mapas PBR quando necessário.
 
-A versão exata do Godot, godot-rust e toolchain Rust deverá ser fixada após um teste de compatibilidade em Linux. Não atualizar dependências críticas sem validar a integração.
+Versões atualmente fixadas no projeto: Godot 4.7.2 Standard, godot-rust 0.5.5 / GDExtension API 4.7 e Rust stable com mínimo 1.94. A integração foi estruturada, mas a compilação e o carregamento devem ser validados em Windows e Linux antes de considerar a fundação concluída.
 
 ### 3.2 Responsabilidades
 
@@ -369,7 +369,7 @@ Esta estrutura é uma referência evolutiva. Diretórios e crates só serão cri
 ## 18. Plano de desenvolvimento
 
 ### Marco 0 — Validação tecnológica
-- Verificar toolchain Linux.
+- Verificar toolchains Windows e Linux.
 - Criar projeto Godot 3D mínimo.
 - Integrar GDExtension Rust.
 - Compilar e executar uma chamada Rust a partir do Godot.
@@ -380,7 +380,7 @@ Esta estrutura é uma referência evolutiva. Diretórios e crates só serão cri
 - Alternância primeira/terceira pessoa.
 - Terreno de teste.
 - Coleta simples e inventário mínimo.
-- Build Linux.
+- Builds Windows e Linux.
 
 ### Marco 2 — Mundo e terreno
 - Seed e geração determinística.
@@ -418,11 +418,11 @@ Esta estrutura é uma referência evolutiva. Diretórios e crates só serão cri
 ### Marco 7 — Persistência e expansão
 - Salvamento robusto.
 - Mais biomas, itens, estruturas e máquinas.
-- Balanceamento, otimização e distribuição Linux.
+- Balanceamento, otimização e distribuição Windows e Linux.
 
 ## 19. Critérios de qualidade
 
-- O projeto deve compilar e executar em Linux x86_64.
+- O projeto deve compilar e executar em Windows 10/11 e Linux x86_64.
 - Dependências e versões devem ser reproduzíveis.
 - Sistemas críticos devem ter testes.
 - Salvamentos devem resistir a encerramento e atualização.
