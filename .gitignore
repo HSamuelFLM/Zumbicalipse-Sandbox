@@ -1,0 +1,12 @@
+/.godot/
+/.import/
+/target/
+/rust/target/
+/.vscode/
+/.idea/
+*.swp
+*.log
+/userdata/
+/saves/
+.DS_Store
+Thumbs.db

@@ -2,54 +2,43 @@
 
 Jogo 3D de sobrevivência single-player, com mundo grande e procedural, exploração, coleta de recursos, fabricação, construção livre e engenharia funcional.
 
-**Plataforma inicial:** PC Linux (x86_64)  
-**Tecnologia planejada:** Godot 4 + Rust (GDExtension)  
+**Plataforma inicial:** PC Linux x86_64  
+**Stack inicial:** Godot 4.7.2 + Rust (godot-rust 0.5.5 / GDExtension API 4.7)  
 **Visual:** 3D low-poly detalhado  
 **Perspectiva:** alternância entre primeira e terceira pessoa
 
-## Direção do projeto
+## Estado do projeto
 
-O jogador deverá explorar o mundo, encontrar ou extrair recursos, fabricar ferramentas e componentes e construir suas próprias bases e máquinas. Não haverá itens ou materiais infinitos disponibilizados gratuitamente na partida normal.
+A direção e a especificação técnica estão documentadas. A fundação inicial Godot 3D + Rust está sendo preparada; os sistemas completos de sobrevivência, mundo procedural, escavação, construção e engenharia ainda não foram implementados.
 
-O jogo pretende oferecer sistemas combináveis de:
-- Escavação, mineração, árvores e processamento de recursos.
-- Inventário, armazenamento e fabricação.
-- Construção livre de estruturas e bases.
-- Fixação com parafusos, porcas, arruelas, pregos, soldagem e encaixes.
-- Ferramentas como martelos, chaves, furadeiras e equipamentos de solda.
-- Engenharia mecânica com motores, engrenagens, eixos, volantes, rodas, polias, correias, correntes, cordas e alavancas.
-- Energia com geradores, baterias, fios, postes, interruptores e consumidores.
-- Sobrevivência, ciclo normal de dia/noite, ameaças ambientais e zumbis.
+O repositório preserva um protótipo experimental 2D em HTML/CSS/JavaScript, criado antes da decisão de migrar para 3D. Esse protótipo é legado e não é a arquitetura do jogo final.
 
 ## Documentação
 
-- [Especificação técnica 1.0](docs/ESPECIFICACAO-TECNICA.md): decisões aprovadas, arquitetura, sistemas, regras e escopo.
-- [Roadmap de desenvolvimento](docs/ROADMAP.md): marcos, tarefas e critérios de conclusão.
+- [Especificação técnica](docs/ESPECIFICACAO-TECNICA.md)
+- [Roadmap de desenvolvimento](docs/ROADMAP.md)
+- [Ambiente e comandos de desenvolvimento](docs/DEVELOPMENT.md)
 
-## Estado atual
+## Fundação 3D
 
-A direção do projeto 3D está especificada, mas a fundação 3D ainda precisa ser implementada e validada.
+A raiz do repositório contém o projeto Godot. A extensão Rust fica em `rust/`.
 
-O repositório ainda contém um protótipo experimental 2D em HTML/CSS/JavaScript, criado antes da decisão de migrar para 3D. **Esse protótipo é legado e não representa a arquitetura aprovada do jogo.** Ele foi preservado para referência; a próxima etapa é criar e validar a fundação Godot + Rust, sem tratar o código 2D como base definitiva.
+```bash
+cargo build --manifest-path rust/Cargo.toml
+godot --editor --path .
+```
+
+Consulte [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) para dependências, execução e solução de problemas.
+
+## Controles do protótipo
+
+- WASD: movimentar.
+- Mouse: olhar ao redor.
+- Espaço: pular.
+- Shift: sprint.
+- V: alternar primeira/terceira pessoa.
+- Escape: liberar o mouse; clique na janela para capturá-lo novamente.
 
 ## Próximo marco
 
-Validar no Linux:
-1. Projeto mínimo Godot 4 em 3D.
-2. Biblioteca Rust integrada via GDExtension.
-3. Compilação e execução reproduzíveis.
-4. Uma cena de teste com personagem e câmeras em primeira e terceira pessoa.
-
-## Princípios
-
-- Single-player na primeira versão; sem bots simulando jogadores.
-- Jogo planejado para funcionar offline.
-- Sistemas funcionais, não apenas objetos decorativos.
-- Recursos precisam ser encontrados, extraídos ou fabricados.
-- Construção livre, com consequências físicas coerentes.
-- Dependências e versões controladas.
-- Entregas jogáveis e verificáveis em cada marco.
-
-## Licença
-
-A definir.
+Validar a compilação e o carregamento da extensão Rust em Godot 4.7.x no Linux antes de iniciar a implementação dos sistemas de jogo.

@@ -1,0 +1,30 @@
+name: Rust foundation
+
+on:
+  push:
+    paths:
+      - "rust/**"
+      - ".github/workflows/rust-ci.yml"
+  pull_request:
+    paths:
+      - "rust/**"
+      - ".github/workflows/rust-ci.yml"
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: Check Rust GDExtension
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install stable Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - name: Check formatting
+        run: cargo fmt --manifest-path rust/Cargo.toml --all -- --check
+      - name: Compile workspace
+        run: cargo check --manifest-path rust/Cargo.toml --workspace
+      - name: Run tests
+        run: cargo test --manifest-path rust/Cargo.toml --workspace
